@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Alarm clock</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="assets/clock2.jpg">
+  </head>
+  <body>
+    <div class="container">
+      <!-- add logo -->
+      <img src="./assets/clock2.jpg" alt="clock">
+
+      <!-- current time -->
+      <h2 id="time">00:00:00 PM</h2>
+
+      <!-- content section, it will contain 3 columns for selecting (hour, minute, am/pm) -->
+      <div class="content">
+        <!-- options will be populated with javascript -->
+        <div class="col">
+          <select id = "hour">
+            <option value="HOUR" selected disabled hidden>HOUR</option>
+          </select>
+        </div>
+        <div class="col">
+          <select id = "minute">
+            <option value="MINUTE" selected disabled hidden>MINUTE</option>
+          </select>
+        </div>
+        <div class="col">
+          <select id = "ampm">
+            <option value="AM/PM" selected disabled hidden>AM/PM</option>
+            <option value="AM">AM</option>
+            <option value="PM">PM</option>
+          </select>
+        </div>
+      </div>
+      <button>Set Alarm</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
