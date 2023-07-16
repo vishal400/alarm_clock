@@ -81,7 +81,6 @@ setInterval(() => {
             ringtone.loop = true;
         }
     }else{
-        console.log("pausing");
         ringtone.pause();
         playing = false;
     }
@@ -129,7 +128,6 @@ function removeAlarm(item) {
     let timeToRemove = item.parentNode.children[0].innerText;
     alarmListElement.removeChild(listItem);
     listOfAlarms.splice(listOfAlarms.lastIndexOf(timeToRemove), 1);
-    console.log(listOfAlarms);
 }
 
 //play ringtone, this function handles playing and pausing the ringtone when user clicks on play button
