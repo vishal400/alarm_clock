@@ -3,6 +3,7 @@ body, .container, .content{
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 body{
   padding: 0 10px;
@@ -73,4 +74,54 @@ body{
   outline: none;
   background: none;
   border: none;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    max-height: 180px;
+    overflow: auto;
+}
+
+.alarm-li-item {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgb(208, 208, 208);
+}
+
+i{
+    padding: 10px;
+}
+.alarm-li-item i, h4{
+    padding: 10px;
+    margin: 0;
+}
+
+.alarm-li-item i {
+    cursor: pointer;
+}
+
+.ringtone-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+.ringtone-container select{
+    border: 1px solid rgb(178, 178, 178);
+    padding: 6px;
+    border-radius: 4px;
+    margin: 12px;
+}
+
+.ringtone-container i:hover {
+    cursor: pointer;
+}
+
+.ringtone-container select:hover{
+    color: white;
+    background-color: #323232;
 }

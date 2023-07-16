@@ -1,41 +1,75 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Alarm clock</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="assets/clock2.jpg">
-  </head>
-  <body>
-    <div class="container">
-      <!-- add logo -->
-      <img src="./assets/clock2.jpg" alt="clock">
+    <head>
+        <title>Alarm clock</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+            integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link rel="stylesheet" href="style.css" />
+        <link rel="shortcut icon" href="assets/clock2.jpg" />
+    </head>
+    <body>
+        <div class="container">
+            <!-- add logo -->
+            <img src="./assets/clock2.jpg" alt="clock" />
 
-      <!-- current time -->
-      <h2 id="time">00:00:00 PM</h2>
+            <!-- current time -->
+            <h2 id="time">00:00:00 PM</h2>
 
-      <!-- content section, it will contain 3 columns for selecting (hour, minute, am/pm) -->
-      <div class="content">
-        <!-- options will be populated with javascript -->
-        <div class="col">
-          <select id = "hour">
-            <option value="HOUR" selected disabled hidden>HOUR</option>
-          </select>
+            <!-- continer for ringtone selector -->
+            <div class="ringtone-container">
+                <label for="ringtone">Select ringtone</label>
+                <select id="ringtone" onchange="setRingtone()">
+                    <option value="default_iphone_alarm">
+                        default_iphone_alarm
+                    </option>
+                    <option value="iphone_alarm">iphone_alarm</option>
+                    <option value="tone_waves">tone_waves</option>
+                    <option value="water_splashing">water_splashing</option>
+                </select>
+                <i
+                    class="fa fa-play"
+                    aria-hidden="true"
+                    onclick="playRingtone()"
+                ></i>
+            </div>
+            <!-- list of alarms -->
+            <ul id="alarms-list"></ul>
+
+            <!-- content section, it will contain 3 columns for selecting (hour, minute, am/pm) -->
+            <div class="content">
+                <!-- options will be populated with javascript -->
+                <div class="col">
+                    <select id="hour">
+                        <option value="HOUR" selected disabled hidden>
+                            HOUR
+                        </option>
+                    </select>
+                </div>
+                <div class="col">
+                    <select id="minute">
+                        <option value="MINUTE" selected disabled hidden>
+                            MINUTE
+                        </option>
+                    </select>
+                </div>
+                <div class="col">
+                    <select id="ampm">
+                        <option value="AM/PM" selected disabled hidden>
+                            AM/PM
+                        </option>
+                        <option value="AM">AM</option>
+                        <option value="PM">PM</option>
+                    </select>
+                </div>
+            </div>
+            <button id="set alarm">Set Alarm</button>
+            <button id="stop" onclick="clearAllAlarm()">Clear All</button>
         </div>
-        <div class="col">
-          <select id = "minute">
-            <option value="MINUTE" selected disabled hidden>MINUTE</option>
-          </select>
-        </div>
-        <div class="col">
-          <select id = "ampm">
-            <option value="AM/PM" selected disabled hidden>AM/PM</option>
-            <option value="AM">AM</option>
-            <option value="PM">PM</option>
-          </select>
-        </div>
-      </div>
-      <button>Set Alarm</button>
-    </div>
-    <script src="script.js"></script>
-  </body>
+        <script src="script.js"></script>
+    </body>
 </html>
